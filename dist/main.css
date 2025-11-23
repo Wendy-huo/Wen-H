@@ -7,6 +7,7 @@ body {
   background: #000000;
   scroll-behavior: smooth;
   overflow: hidden;
+  cursor: none;
 }
 
 .loader-roll {
@@ -168,9 +169,9 @@ span {
   display: inline-block;
   color: #fff;
   padding: 1rem;
-  margin-right: 4rem;
+  margin-right: 0.3rem;
   letter-spacing: 0.4em;
-  font-size: 1em;
+  font-size: 1.3em;
   transition: all 0.3s ease, color 0.3s ease;
 }
 
@@ -304,12 +305,12 @@ nav.header .a:hover ~ .cursor {
 
 .hero {
   pointer-events: none;
-  font-size: 2em;
+  font-size: 3.4em;
   letter-spacing: 0.5em;
   text-align: center;
   width: 100%;
   display: flex;
-  height: 110vh;
+  height: 114vh;
   align-content: center;
   justify-content: flex-end;
   align-items: center;
@@ -341,7 +342,7 @@ nav.header .a:hover ~ .cursor {
 .hero h1:after {
   content: '';
   position: absolute;
-  margin-top: 105px;
+  margin-top: 125px;
   left: calc(50% - 25px);
   width: 50px;
   height: 3px;
@@ -352,10 +353,10 @@ nav.header .a:hover ~ .cursor {
   font-size: 16px;
   letter-spacing: 0px;
   font-family: sans-serif;
-  width: 700px;
+  width: 780px;
   line-height: 28px;
   font-weight: lighter;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 100px;
   color: #c9c9c996;
   opacity: 0;

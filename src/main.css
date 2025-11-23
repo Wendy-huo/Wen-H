@@ -339,15 +339,7 @@ nav.header .a:hover ~ .cursor {
   letter-spacing: 0.4em;
 }
 
-.hero h1:after {
-  content: '';
-  position: absolute;
-  margin-top: 125px;
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 3px;
-  background: #ffffff70;
-}
+
 
 .hero p {
   font-size: 16px;
