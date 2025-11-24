@@ -189,7 +189,7 @@ document.getElementById('aglaea').addEventListener('click', () => {
   document.getElementById('euphre').classList.remove('active');
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'She was venerated as the goddess of beauty, splendor, glory, magnificence, and adornment. She is the youngest of the Charites according to Hesiod. Aglaea is one of three daughters of Zeus and either the Oceanid Eurynome, or of Eunomia, the goddess of good order and lawful conduct.';
+    'eHub descriptions cominggg';
   animateCamera({ x: 1.9, y: 2.7, z: 2.7 }, { y: 1.1 });
 });
 
@@ -198,7 +198,7 @@ document.getElementById('thalia').addEventListener('click', () => {
   document.getElementById('aglaea').classList.remove('active');
   document.getElementById('euphre').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'Thalia, in Greek religion, one of the nine Muses, patron of comedy; also, according to the Greek poet Hesiod, a Grace (one of a group of goddesses of fertility). She is the mother of the Corybantes, celebrants of the Great Mother of the Gods, Cybele, the father being Apollo, a god related to music and dance. In her hands she carried the comic mask and the shepherd’s staff.';
+    'fast descriptions coming.';
   animateCamera({ x: -0.9, y: 3.1, z: 2.6 }, { y: -0.1 });
 });
 
@@ -207,7 +207,7 @@ document.getElementById('euphre').addEventListener('click', () => {
   document.getElementById('aglaea').classList.remove('active');
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'Euphrosyne is a Goddess of Good Cheer, Joy and Mirth. Her name is the female version of a Greek word euphrosynos, which means "merriment". The Greek poet Pindar states that these goddesses were created to fill the world with pleasant moments and good will. Usually the Charites attended the goddess of beauty Aphrodite.';
+    'tbd stuff coming.';
   animateCamera({ x: -0.4, y: 2.7, z: 1.9 }, { y: -0.6 });
 });
 

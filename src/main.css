@@ -213,7 +213,7 @@ nav.header .a:hover ~ .cursor {
   pointer-events: none;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20%;
   outline: none;
   z-index: 0;
   height: 100%;
@@ -393,7 +393,7 @@ nav.header .a:hover ~ .cursor {
   list-style: none;
   display: inline-flex;
   padding: 0px;
-  margin: 0px 0px 30px 60px;
+  margin: -300px 0px 30px -30px;
   font-family: 'DM Serif Display', serif;
   color: #ffffff1c;
   z-index: 2;
@@ -436,7 +436,7 @@ nav.header .a:hover ~ .cursor {
   line-height: 28px;
   width: 30%;
   color: #6a6a6a;
-  margin-left: 60px;
+  margin-left: -30px;
   height: 200px;
 }
 
@@ -459,10 +459,11 @@ nav.header .a:hover ~ .cursor {
   width: 50%;
   margin-left: 52%;
   z-index: 2;
+  margin-top: -500px;
 }
 
 .making-container h1 {
-  font-size: 5vw;
+  font-size: 3vw;
   font-weight: 500;
   letter-spacing: 0.7px;
   color: whitesmoke;
