@@ -193,6 +193,7 @@ document.getElementById('aglaea').addEventListener('click', () => {
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'block';
   videos[1].style.display = 'none';
+  document.getElementById('tbd-video-container').style.display = 'none';
   animateCamera({ x: 1.9, y: 2.7, z: 2.7 }, { y: 1.1 });
 });
 
@@ -205,6 +206,7 @@ document.getElementById('thalia').addEventListener('click', () => {
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'none';
   videos[1].style.display = 'block';
+  document.getElementById('tbd-video-container').style.display = 'none';
   animateCamera({ x: -0.9, y: 3.1, z: 2.6 }, { y: -0.1 });
 });
 
@@ -217,6 +219,7 @@ document.getElementById('euphre').addEventListener('click', () => {
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'none';
   videos[1].style.display = 'none';
+  document.getElementById('tbd-video-container').style.display = 'flex';
   animateCamera({ x: -0.4, y: 2.7, z: 1.9 }, { y: -0.6 });
 });
 

@@ -445,7 +445,7 @@ nav.header .a:hover ~ .cursor {
   position: absolute;
   bottom: 115px; /* move up by 30px */
   left: calc(10% - 70px);
-  width: calc(48% + 30px); /* extend width by 30px */
+  width: calc(48% + 20px); /* extend width by 20px */
   pointer-events: all;
   height: 570px; /* increase height by 50px to allow cropping */
 }
@@ -456,12 +456,34 @@ nav.header .a:hover ~ .cursor {
   background: #000;
   border-radius: 4px;
   object-fit: cover;
+  margin-top: 40px;
+}
 #fast-video {
   width: 100%;
   height: calc(100% - 30px); /* crop lower end by 30px */
   background: #000;
   border-radius: 4px;
   object-fit: cover;
+  margin-top: 40px;
+}
+
+#tbd-video-container {
+  position: absolute;
+  bottom: 65px;
+  left: calc(10% - 70px);
+  display: flex;
+  gap: 26px;
+  pointer-events: all;
+}
+
+#green-icon-video,
+#cupid-video {
+  width: auto;
+  height: 570px;
+  background: #000;
+  border-radius: 4px;
+  object-fit: contain;
+  margin-top: 40px;
 }
 
 .making {
