@@ -16,18 +16,14 @@ module.exports = merge(
         mode: 'development',
         devServer:
         {
-            host: 'local-ip',
-            port: portFinderSync.getPort(8080),
-            open: true,
+            host: '0.0.0.0',
+            port: 8080,
+            open: false,
             https: false,
             allowedHosts: 'all',
             hot: false,
             watchFiles: ['src/**', 'static/**'],
-            static:
-            {
-                watch: true,
-                directory: path.join(__dirname, '../static')
-            },
+            historyApiFallback: true,
             client:
             {
                 logging: 'none',

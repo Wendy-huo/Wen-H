@@ -190,6 +190,9 @@ document.getElementById('aglaea').addEventListener('click', () => {
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
     'eHub descriptions cominggg';
+  const videos = document.querySelectorAll('#video-container');
+  videos[0].style.display = 'block';
+  videos[1].style.display = 'none';
   animateCamera({ x: 1.9, y: 2.7, z: 2.7 }, { y: 1.1 });
 });
 
@@ -199,6 +202,9 @@ document.getElementById('thalia').addEventListener('click', () => {
   document.getElementById('euphre').classList.remove('active');
   document.getElementById('content').innerHTML =
     'fast descriptions coming.';
+  const videos = document.querySelectorAll('#video-container');
+  videos[0].style.display = 'none';
+  videos[1].style.display = 'block';
   animateCamera({ x: -0.9, y: 3.1, z: 2.6 }, { y: -0.1 });
 });
 
@@ -208,6 +214,9 @@ document.getElementById('euphre').addEventListener('click', () => {
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
     'tbd stuff coming.';
+  const videos = document.querySelectorAll('#video-container');
+  videos[0].style.display = 'none';
+  videos[1].style.display = 'none';
   animateCamera({ x: -0.4, y: 2.7, z: 1.9 }, { y: -0.6 });
 });
 

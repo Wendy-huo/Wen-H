@@ -387,6 +387,7 @@ nav.header .a:hover ~ .cursor {
     rgba(5, 5, 5, 0) 30%,
     #141414 70%
   );
+  position: relative;
 }
 
 .goddesses-container ul {
@@ -438,6 +439,29 @@ nav.header .a:hover ~ .cursor {
   color: #6a6a6a;
   margin-left: -30px;
   height: 200px;
+}
+
+#video-container {
+  position: absolute;
+  bottom: 115px; /* move up by 30px */
+  left: calc(10% - 70px);
+  width: calc(48% + 30px); /* extend width by 30px */
+  pointer-events: all;
+  height: 570px; /* increase height by 50px to allow cropping */
+}
+
+#eHub-video {
+  width: 100%;
+  height: calc(100% - 30px); /* crop lower end by 30px */
+  background: #000;
+  border-radius: 4px;
+  object-fit: cover;
+#fast-video {
+  width: 100%;
+  height: calc(100% - 30px); /* crop lower end by 30px */
+  background: #000;
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 .making {
