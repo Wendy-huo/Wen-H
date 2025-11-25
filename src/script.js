@@ -189,7 +189,7 @@ document.getElementById('aglaea').addEventListener('click', () => {
   document.getElementById('euphre').classList.remove('active');
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'eHub descriptions cominggg';
+    'Spec branding work for the Berkeley Haas Entrepreneurship Hub.';
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'block';
   videos[1].style.display = 'none';
@@ -202,7 +202,7 @@ document.getElementById('thalia').addEventListener('click', () => {
   document.getElementById('aglaea').classList.remove('active');
   document.getElementById('euphre').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'fast descriptions coming.';
+    'Slogan and concept designs for Fashion and Student Trends at UC Berkeley.';
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'none';
   videos[1].style.display = 'block';
@@ -215,7 +215,7 @@ document.getElementById('euphre').addEventListener('click', () => {
   document.getElementById('aglaea').classList.remove('active');
   document.getElementById('thalia').classList.remove('active');
   document.getElementById('content').innerHTML =
-    'tbd stuff coming.';
+    'UI/UX designs for Anecdote, an emotionally intelligent AI companion.';
   const videos = document.querySelectorAll('#video-container');
   videos[0].style.display = 'none';
   videos[1].style.display = 'none';
