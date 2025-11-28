@@ -50,7 +50,8 @@
     </div>
     <div id="loading-text-intro"></div>
 
-    <main class="main-container" style="visibility: hidden">
+    <!-- Desktop View -->
+    <main class="main-container desktop-view" style="visibility: hidden">
       <nav class="header">
         <div class="cursor"></div>
       </nav>
@@ -121,8 +122,89 @@
       </section>
 
       <div id="canvas-container-hero" class="fixed"></div>
-
-      
     </main>
+
+    <!-- Mobile View - Multiple Pages -->
+    <div class="mobile-view">
+      <!-- Mobile Page 1: Hero -->
+      <div class="mobile-page" id="mobile-page-0">
+        <div class="mobile-page-content">
+          <h1>WENDY HUO</h1>
+          <p>Filmmaker, Designer, Developer</p>
+          <div class="mobile-nav-buttons">
+            <button class="mobile-nav-btn" onclick="goToMobilePage(1)">Portfolio</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(4)">Projects</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Page 1: eHub -->
+      <div class="mobile-page" id="mobile-page-1">
+        <div class="mobile-page-content">
+          <h2>eHub</h2>
+          <p>Spec branding work for the Berkeley Haas Entrepreneurship Hub.</p>
+          <video controls width="100%">
+            <source src="./videos/eHub.mp4" type="video/mp4">
+            <source src="./videos/eHub.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+          <div class="mobile-nav-buttons">
+            <button class="mobile-nav-btn" onclick="goToMobilePage(0)">← Back</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(2)">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Page 2: FAST -->
+      <div class="mobile-page" id="mobile-page-2">
+        <div class="mobile-page-content">
+          <h2>FAST</h2>
+          <p>Slogan and concept designs for Fashion and Student Trends at UC Berkeley.</p>
+          <video controls width="100%">
+            <source src="./videos/fast slogan.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="mobile-nav-buttons">
+            <button class="mobile-nav-btn" onclick="goToMobilePage(1)">← Back</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(3)">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Page 3: Anecdote -->
+      <div class="mobile-page" id="mobile-page-3">
+        <div class="mobile-page-content">
+          <h2>Anecdote</h2>
+          <p>UI/UX designs for Anecdote, an emotionally intelligent AI companion.</p>
+          <video controls width="100%">
+            <source src="./videos/Green icon.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <video controls width="100%">
+            <source src="./videos/Cupid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="mobile-nav-buttons">
+            <button class="mobile-nav-btn" onclick="goToMobilePage(2)">← Back</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(4)">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Page 4: Personal Projects -->
+      <div class="mobile-page" id="mobile-page-4">
+        <div class="mobile-page-content">
+          <h2>Personal Projects</h2>
+          <p>A cinematic mini-documentary capturing my visit to an immersive theatrical production of Dream of the Red Chamber in Beijing, China. Based on Cao Xueqin's 18th-century classic novel, the production blends modern staging with traditional Chinese aesthetics. This film reflects my personal experience and visual interpretation of the performance.</p>
+          <video controls width="100%">
+            <source src="./videos/red.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="mobile-nav-buttons">
+            <button class="mobile-nav-btn" onclick="goToMobilePage(0)">← Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

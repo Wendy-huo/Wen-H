@@ -15,6 +15,34 @@ import { TWEEN } from 'three/examples/jsm/libs/tween.module.min.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+// Mobile page navigation
+function goToMobilePage(pageNum) {
+  // Hide all mobile pages
+  const mobilePages = document.querySelectorAll('.mobile-page');
+  mobilePages.forEach(page => page.classList.remove('active'));
+  
+  // Show the requested page
+  const targetPage = document.getElementById(`mobile-page-${pageNum}`);
+  if (targetPage) {
+    targetPage.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+}
+
+// Make it globally accessible
+window.goToMobilePage = goToMobilePage;
+
+// Initialize first mobile page
+window.addEventListener('load', () => {
+  const isMobile = window.innerWidth <= 660;
+  if (isMobile) {
+    const firstPage = document.getElementById('mobile-page-0');
+    if (firstPage) {
+      firstPage.classList.add('active');
+    }
+  }
+});
+
 const ftsLoader = document.querySelector('.loader-roll');
 const looadingCover = document.getElementById('loading-text-intro');
 const loadingManager = new LoadingManager();
