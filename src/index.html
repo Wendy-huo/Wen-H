@@ -126,14 +126,17 @@
 
     <!-- Mobile View - Multiple Pages -->
     <div class="mobile-view">
-      <!-- Mobile Page 1: Hero -->
+      <!-- Mobile Page 0: Hero with 3D Model -->
       <div class="mobile-page" id="mobile-page-0">
-        <div class="mobile-page-content">
+        <div id="canvas-container-hero-mobile" class="mobile-canvas"></div>
+        <div class="mobile-page-content hero-content">
           <h1>WENDY HUO</h1>
           <p>Filmmaker, Designer, Developer</p>
           <div class="mobile-nav-buttons">
-            <button class="mobile-nav-btn" onclick="goToMobilePage(1)">Portfolio</button>
-            <button class="mobile-nav-btn" onclick="goToMobilePage(4)">Projects</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(1)">eHub</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(2)">FAST</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(3)">Anecdote</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(4)">Personal Project</button>
           </div>
         </div>
       </div>
@@ -191,17 +194,18 @@
         </div>
       </div>
 
-      <!-- Mobile Page 4: Personal Projects -->
+      <!-- Mobile Page 4: Personal Project -->
       <div class="mobile-page" id="mobile-page-4">
         <div class="mobile-page-content">
-          <h2>Personal Projects</h2>
+          <h2>Personal Project</h2>
           <p>A cinematic mini-documentary capturing my visit to an immersive theatrical production of Dream of the Red Chamber in Beijing, China. Based on Cao Xueqin's 18th-century classic novel, the production blends modern staging with traditional Chinese aesthetics. This film reflects my personal experience and visual interpretation of the performance.</p>
           <video controls width="100%">
             <source src="./videos/red.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <div class="mobile-nav-buttons">
-            <button class="mobile-nav-btn" onclick="goToMobilePage(0)">← Back to Home</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(3)">← Back</button>
+            <button class="mobile-nav-btn" onclick="goToMobilePage(0)">Home</button>
           </div>
         </div>
       </div>

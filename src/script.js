@@ -48,7 +48,11 @@ const looadingCover = document.getElementById('loading-text-intro');
 const loadingManager = new LoadingManager();
 
 loadingManager.onLoad = function () {
-  document.querySelector('.main-container').style.visibility = 'visible';
+  const isMobile = window.innerWidth <= 660;
+  
+  if (!isMobile) {
+    document.querySelector('.main-container').style.visibility = 'visible';
+  }
   document.querySelector('body').style.overflow = 'auto';
 
   const yPosition = { y: 0 };
@@ -70,7 +74,16 @@ loadingManager.onLoad = function () {
       TWEEN.remove(this);
     });
 
-  introAnimation();
+  if (!isMobile) {
+    introAnimation();
+  } else {
+    // Show first mobile page on load
+    const firstPage = document.getElementById('mobile-page-0');
+    if (firstPage) {
+      firstPage.classList.add('active');
+    }
+  }
+  
   ftsLoader.parentNode.removeChild(ftsLoader);
 
   window.scroll(0, 0);
@@ -86,6 +99,7 @@ loader.setDRACOLoader(dracoLoader);
 const container = document.getElementById('canvas-container-hero');
 const containerDetails = document.getElementById('canvas-container-goddesses');
 const containerFooter = document.getElementById('canvas-container-euphre');
+const containerMobileHero = document.getElementById('canvas-container-hero-mobile');
 
 let oldMaterial;
 let secondContainer = false;
@@ -119,6 +133,18 @@ renderer3.setSize(width, height);
 renderer3.outputEncoding = sRGBEncoding;
 containerFooter.appendChild(renderer3.domElement);
 
+// Mobile renderer (if on mobile)
+let renderer4;
+if (containerMobileHero) {
+  renderer4 = new WebGLRenderer({ antialias: true, alpha: true });
+  renderer4.setPixelRatio(Math.min(window.devicePixelRatio, 1));
+  const mobileWidth = containerMobileHero.clientWidth;
+  const mobileHeight = containerMobileHero.clientHeight;
+  renderer4.setSize(mobileWidth, mobileHeight);
+  renderer4.outputEncoding = sRGBEncoding;
+  containerMobileHero.appendChild(renderer4.domElement);
+}
+
 // camera config
 const cameraGroup = new Group();
 scene.add(cameraGroup);
@@ -146,6 +172,19 @@ const camera3 = new PerspectiveCamera(
 camera3.position.set(-2.2, 2.7, 1.9);
 camera3.rotation.set(0, -0.8, 0);
 scene.add(camera3);
+
+// Mobile camera (if on mobile)
+let camera4;
+if (containerMobileHero) {
+  camera4 = new PerspectiveCamera(
+    35,
+    containerMobileHero.clientWidth / containerMobileHero.clientHeight,
+    1,
+    100
+  );
+  camera4.position.set(19, 1.54, -0.1);
+  scene.add(camera4);
+}
 
 // resize event listener
 window.addEventListener('resize', () => {
@@ -284,6 +323,11 @@ function renderLoop() {
     renderer.render(scene, camera);
   }
   renderer3.render(scene, camera3);
+  
+  // Render mobile canvas if it exists
+  if (renderer4 && camera4 && document.getElementById('mobile-page-0')?.classList.contains('active')) {
+    renderer4.render(scene, camera4);
+  }
 
   const elapsedTime = clock.getElapsedTime();
   const deltaTime = elapsedTime - previousTime;
