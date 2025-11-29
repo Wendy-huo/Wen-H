@@ -10,14 +10,6 @@ body {
   cursor: none;
 }
 
-.mobile-view {
-  display: none;
-}
-
-.desktop-view {
-  display: block;
-}
-
 .loader-roll {
   width: 80px;
   height: 80px;
@@ -688,6 +680,15 @@ nav.header .a:hover ~ .cursor {
   }
 }
 
+/* Mobile View Styles */
+.mobile-view {
+  display: none;
+}
+
+.desktop-view {
+  display: block;
+}
+
 @media only screen and (max-width: 660px) {
   body {
     overflow: hidden;
@@ -731,7 +732,7 @@ nav.header .a:hover ~ .cursor {
   .mobile-page-content {
     display: flex;
     flex-direction: column;
-    padding: 30px 20px 60px 20px;
+    padding: 30px 20px 80px 20px;
     color: #fff;
     font-family: 'Nanum Myeongjo', serif;
     flex: 0 1 auto;
@@ -742,7 +743,7 @@ nav.header .a:hover ~ .cursor {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 30px 20px 60px 20px;
+    padding: 30px 20px 80px 20px;
     min-height: auto;
   }
 
@@ -790,10 +791,14 @@ nav.header .a:hover ~ .cursor {
     display: block;
   }
 
+  .mobile-anecdote-content {
+    padding: 30px 20px 100px 20px !important;
+  }
+
   .mobile-nav-buttons {
     display: flex;
     gap: 8px;
-    margin-top: 15px;
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
     flex-shrink: 0;

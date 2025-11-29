@@ -17,11 +17,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // Mobile page navigation
 function goToMobilePage(pageNum) {
-  // Hide all mobile pages
   const mobilePages = document.querySelectorAll('.mobile-page');
   mobilePages.forEach(page => page.classList.remove('active'));
   
-  // Show the requested page
   const targetPage = document.getElementById(`mobile-page-${pageNum}`);
   if (targetPage) {
     targetPage.classList.add('active');
@@ -29,7 +27,6 @@ function goToMobilePage(pageNum) {
   }
 }
 
-// Make it globally accessible
 window.goToMobilePage = goToMobilePage;
 
 const ftsLoader = document.querySelector('.loader-roll');
@@ -66,12 +63,10 @@ loadingManager.onLoad = function () {
   if (!isMobile) {
     introAnimation();
   } else {
-    // Show first mobile page on load and init renderer
     const firstPage = document.getElementById('mobile-page-0');
     if (firstPage) {
       firstPage.classList.add('active');
     }
-    // Initialize mobile renderer
     setTimeout(() => {
       initMobileRenderer();
     }, 100);
