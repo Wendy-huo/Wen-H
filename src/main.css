@@ -508,7 +508,7 @@ nav.header .a:hover ~ .cursor {
 
 #green-icon-video,
 #cupid-video {
-  width: auto;
+  width: 340px;
   height: 570px;
   background: #000;
   border-radius: 4px;
