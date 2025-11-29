@@ -77,11 +77,15 @@ loadingManager.onLoad = function () {
   if (!isMobile) {
     introAnimation();
   } else {
-    // Show first mobile page on load
+    // Show first mobile page on load and init renderer
     const firstPage = document.getElementById('mobile-page-0');
     if (firstPage) {
       firstPage.classList.add('active');
     }
+    // Initialize mobile renderer
+    setTimeout(() => {
+      initMobileRenderer();
+    }, 100);
   }
   
   ftsLoader.parentNode.removeChild(ftsLoader);
@@ -99,12 +103,12 @@ loader.setDRACOLoader(dracoLoader);
 const container = document.getElementById('canvas-container-hero');
 const containerDetails = document.getElementById('canvas-container-goddesses');
 const containerFooter = document.getElementById('canvas-container-euphre');
-const containerMobileHero = document.getElementById('canvas-container-hero-mobile');
+let containerMobileHero = document.getElementById('canvas-container-hero-mobile');
 
 let oldMaterial;
 let secondContainer = false;
-let width = container.clientWidth;
-let height = container.clientHeight;
+let width = container?.clientWidth || 800;
+let height = container?.clientHeight || 600;
 
 // scene
 const scene = new Scene();
@@ -172,19 +176,6 @@ const camera3 = new PerspectiveCamera(
 camera3.position.set(-2.2, 2.7, 1.9);
 camera3.rotation.set(0, -0.8, 0);
 scene.add(camera3);
-
-// Mobile camera (if on mobile)
-let camera4;
-if (containerMobileHero) {
-  camera4 = new PerspectiveCamera(
-    35,
-    containerMobileHero.clientWidth / containerMobileHero.clientHeight,
-    1,
-    100
-  );
-  camera4.position.set(19, 1.54, -0.1);
-  scene.add(camera4);
-}
 
 // resize event listener
 window.addEventListener('resize', () => {
