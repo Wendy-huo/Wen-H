@@ -32,17 +32,6 @@ function goToMobilePage(pageNum) {
 // Make it globally accessible
 window.goToMobilePage = goToMobilePage;
 
-// Initialize first mobile page
-window.addEventListener('load', () => {
-  const isMobile = window.innerWidth <= 660;
-  if (isMobile) {
-    const firstPage = document.getElementById('mobile-page-0');
-    if (firstPage) {
-      firstPage.classList.add('active');
-    }
-  }
-});
-
 const ftsLoader = document.querySelector('.loader-roll');
 const looadingCover = document.getElementById('loading-text-intro');
 const loadingManager = new LoadingManager();
@@ -110,6 +99,37 @@ let secondContainer = false;
 let width = container?.clientWidth || 800;
 let height = container?.clientHeight || 600;
 
+// Mobile renderer variables
+let renderer4;
+let camera4;
+
+function initMobileRenderer() {
+  if (!containerMobileHero || renderer4) return;
+  
+  try {
+    renderer4 = new WebGLRenderer({ antialias: true, alpha: true });
+    renderer4.setPixelRatio(Math.min(window.devicePixelRatio, 1));
+    const mobileWidth = containerMobileHero.clientWidth;
+    const mobileHeight = containerMobileHero.clientHeight;
+    
+    if (mobileWidth > 0 && mobileHeight > 0) {
+      renderer4.setSize(mobileWidth, mobileHeight);
+      renderer4.outputEncoding = sRGBEncoding;
+      
+      while (containerMobileHero.firstChild) {
+        containerMobileHero.removeChild(containerMobileHero.firstChild);
+      }
+      containerMobileHero.appendChild(renderer4.domElement);
+      
+      camera4 = new PerspectiveCamera(35, mobileWidth / mobileHeight, 1, 100);
+      camera4.position.set(19, 1.54, -0.1);
+      scene.add(camera4);
+    }
+  } catch (e) {
+    console.error('Error initializing mobile renderer:', e);
+  }
+}
+
 // scene
 const scene = new Scene();
 
@@ -136,18 +156,6 @@ renderer3.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 renderer3.setSize(width, height);
 renderer3.outputEncoding = sRGBEncoding;
 containerFooter.appendChild(renderer3.domElement);
-
-// Mobile renderer (if on mobile)
-let renderer4;
-if (containerMobileHero) {
-  renderer4 = new WebGLRenderer({ antialias: true, alpha: true });
-  renderer4.setPixelRatio(Math.min(window.devicePixelRatio, 1));
-  const mobileWidth = containerMobileHero.clientWidth;
-  const mobileHeight = containerMobileHero.clientHeight;
-  renderer4.setSize(mobileWidth, mobileHeight);
-  renderer4.outputEncoding = sRGBEncoding;
-  containerMobileHero.appendChild(renderer4.domElement);
-}
 
 // camera config
 const cameraGroup = new Group();
